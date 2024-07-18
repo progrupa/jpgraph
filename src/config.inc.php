@@ -25,10 +25,12 @@ require_once ROOT_PATH . '/vendor/autoload.php';
 
 use Amenadiel\JpGraph\Util\ErrMsgText;
 
+/* Stop loading .env file, it overrides proper variables sometimes
 if (\is_readable(ROOT_PATH . '/.env') && \class_exists('\Symfony\Component\Dotenv\Dotenv')) {
     $dotenv = new \Symfony\Component\Dotenv\Dotenv();
     $dotenv->load(ROOT_PATH . '/.env');
 }
+*/
 
 if (\getenv('JPGRAPH_DEBUGMODE') && !\defined('DEBUGMODE')) {
     \define('DEBUGMODE', \getenv('JPGRAPH_DEBUGMODE'));
